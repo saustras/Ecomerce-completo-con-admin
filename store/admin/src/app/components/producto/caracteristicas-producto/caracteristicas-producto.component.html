@@ -1,0 +1,113 @@
+<app-sidebar></app-sidebar>
+
+<div class="border-bottom mb-5">
+  <h1 class="mt-2 mt-md-4 mb-3 pt-5">Características</h1>
+  <div class="d-flex flex-wrap flex-md-nowrap justify-content-between">
+    <p class="text-muted">Este módulo lista todos los cupones.</p>
+
+  </div>
+</div>
+
+
+<div class="card box-shadow-sm">
+  <div class="card-header">
+    <h5 style="margin-bottom: 0px;">Caracteristicas del producto</h5>
+  </div>
+
+  <div class="card-body">
+    <div style="max-width: 60rem;">
+
+      <div class="row mb-4">
+        <div class="col-md-4 " style="padding-right: 0px">
+          <img [src]="url+'get_portada_admin/'+producto.portada" class="img-thumbnail rounded-0" alt="Square image">
+        </div>
+        <div class="col-md-8" style="padding-left: 0px">
+          <div class="card" style="height: 100%; background: #f5eeee;">
+            <div class="card-body">
+              <h3 class="card-product-title text-truncate mb-2">
+                <a class="nav-link ">{{producto.titulo}}</a>
+                <p class="text-muted mt-3">{{producto.descripcion}}</p>
+                <div class="d-flex align-items-center">
+                  <span class="h5 d-inline-block mb-0 text-danger">${{producto.precio}}</span>
+                </div>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="form-group row align-items-center">
+        <div class="form-group row align-items-center">
+          <label class="col-md-2 col-form-label font-weight-medium" for="text-input">Titulo de la
+            caracteristica</label>
+          <div class="col-md-9">
+            <input class="form-control" type="text" id="text-input" placeholder="Titulo" required name="titulo_caracte"
+              [(ngModel)]="producto.titulo_caracte">
+          </div>
+        </div>
+
+
+        <div class="form-group row align-items-center">
+          <label class="col-md-2 col-form-label font-weight-medium" for="text-input">Característica</label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Nueva característica" name="nueva_caracte"
+                [(ngModel)]="nueva_caracte">
+              <button class="btn btn-primary" (click)="agregar_caracte()" type="button">Agregar</button>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+
+          </div>
+
+          <div class="col-md-9">
+
+            <div class="table-responsive mt-3">
+              <table class="table table-sm" *ngIf="producto.caracteristicas">
+                <thead class="thead-dark">
+                  <tr>
+                    <th class="pl-3">Titulo</th>
+                    <th>Eliminar</th>
+                  </tr>
+                </thead>
+                <ng-container *ngIf="producto.caracteristicas.length == 0">
+                  <tbody>
+                    <tr>
+                      <td colspan="3" class="text-center">
+                        <span class="text-muted "> No hay características disponibles</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </ng-container>
+
+                <ng-container *ngIf="producto.caracteristicas.length >= 1">
+                  <tbody *ngFor="let item of producto.caracteristicas; let indice = index">
+                    <tr>
+                      <td>{{item.titulo}}</td>
+                      <td> <a style="cursor: pointer;" class="text-danger" (click)="eliminar_caracte(indice)">
+                          [eliminar]</a></td>
+                    </tr>
+                  </tbody>
+                </ng-container>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="card-footer">
+      <button *ngIf="!load_btn" class="btn btn-primary me-2 mr-3" (click)="actualizar()" type="submit">Guardar
+        caracteristicas</button>
+      <button *ngIf="load_btn" type="button" class="btn btn-secondary" disabled>
+        <span class="spinner-border spinner-border-sm " role="status" aria-hidden="true"></span>
+        Loading...
+      </button>
+      <button class="btn btn-warning ml-2" [routerLink]="['/admin/productos']">Regresar</button>
+    </div>
+
+  </div>
+</div>

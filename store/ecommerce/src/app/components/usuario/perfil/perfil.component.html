@@ -1,0 +1,89 @@
+<app-navbar></app-navbar>
+<main class="cs-page-wrapper">
+  <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb breadcrumb-alt mb-0">
+        <li class="breadcrumb-item">
+          <a [routerLink]="['/']"><i class="cxi-home"></i></a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Mi perfil</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="container pt-3 pt-lg-4 pb-5 pb-lg-6">
+    <div class="row pb-2 pb-lg-0">
+
+      <aside class="col-xl-3 col-lg-4 pb-3 mb-4 mb-lg-0">
+        <app-sidebar></app-sidebar>
+      </aside>
+
+
+      <!-- Content -->
+      <div class="col-lg-8 ml-auto">
+        <div class="d-flex align-items-center justify-content-between mb-4 pb-sm-2">
+          <h1 class="h2 mb-0">Mi perfil</h1>
+        </div>
+        <form #actualizarForm="ngForm" (ngSubmit)="actualizar(actualizarForm)">
+          <div class="row pb-3">
+            <div class="col-sm-6 form-group">
+              <label for="ac-fn">Nombres</label>
+              <input type="text" class="form-control form-control-lg" required name="nombre"
+                [(ngModel)]="cliente.nombre" placeholder="Nombres">
+            </div>
+            <div class="col-sm-6 form-group">
+              <label for="ac-ln">Apellidos</label>
+              <input type="text" class="form-control form-control-lg" required name="apellidos"
+                [(ngModel)]="cliente.apellidos" placeholder="Apellidos">
+            </div>
+            <div class="col-sm-6 form-group">
+              <label for="ac-email">Correo electronico</label>
+              <input type="email" class="form-control form-control-lg" required readonly value="{{cliente.email}}">
+            </div>
+            <div class="col-sm-6 form-group">
+              <label for="ac-password">Contraseña</label>
+              <input type="password" class="form-control form-control-lg" placeholder="Nueva contraseña" name="password"
+                [(ngModel)]="cliente.password">
+            </div>
+            <div class="col-sm-6 form-group">
+              <label for="ac-phone">Telefono</label>
+              <input type="number" class="form-control form-control-lg" placeholder="1234567890" required
+                name="telefono" [(ngModel)]="cliente.telefono">
+            </div>
+            <div class="col-sm-6 form-group">
+              <label for="ac-phone">Fecha nacimiento</label>
+              <input type="date" class="form-control form-control-lg" name="f_nacimiento" required name="f_nacimiento"
+                [(ngModel)]="cliente.f_nacimiento">
+            </div>
+            <div class="col-sm-6 form-group">
+              <label for="ac-phone">DNI</label>
+              <input type="number" class="form-control form-control-lg" placeholder="12345678" name="dni" required
+                [(ngModel)]="cliente.dni">
+            </div>
+
+            <div class="col-sm-6 form-group">
+              <label for="ac-country">Genero</label>
+              <select class="custom-select custom-select-lg" required name="genero" [(ngModel)]="cliente.genero">
+                <option value="" disabled selected>Seleccionar</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+              </select>
+            </div>
+            <div class="col-sm-6 form-group">
+              <label for="ac-city">Pais</label>
+              <select class="custom-select custom-select-lg" required name="pais" [(ngModel)]="cliente.pais">
+                <option value="" disabled selected>Seleccionar</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Peru">Peru</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">&nbsp;Guardar cambios&nbsp;</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+<app-footer></app-footer>

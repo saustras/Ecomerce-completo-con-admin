@@ -1,0 +1,86 @@
+<app-navbar></app-navbar>
+<main class="cs-page-wrapper">
+  <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb breadcrumb-alt mb-0">
+        <li class="breadcrumb-item">
+          <a href="index.html"><i class="cxi-home"></i></a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Registro</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="container pt-3 pt-md-4 pb-3 pb-sm-4 pb-lg-5 mb-4">
+    <div class="row d-flex align-items-center h-100">
+      <div class="col-lg-6 mx-auto">
+        <div class="px-md-5 ">
+          <h3 class="modal-title mt-4 mb-0 text-center" id="titulo">Registro rápido</h3>
+          <form #registroForm="ngForm" (ngSubmit)="registro(registroForm)">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6">
+                  <label for="signin-email">Nombres completos</label>
+                  <input type="email" class="form-control" placeholder="Nombre" name="nombre" [(ngModel)]="user.nombre"
+                    required>
+                </div>
+                <div class="col-lg-6">
+                  <label for="signin-email">Apellidos completos</label>
+                  <input type="email" class="form-control" placeholder="Apellidos" name="apellidos"
+                    [(ngModel)]="user.apellidos" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="signin-email">Email</label>
+              <input type="email" class="form-control" placeholder="Tu correo" name="email" [(ngModel)]="user.email"
+                required>
+            </div>
+            <div class="form-group">
+              <label for="signin-password" class="form-label">Password</label>
+              <div class="cs-password-toggle input-group-overlay">
+                <input type="password" class="form-control appended-form-control" name="password"
+                  placeholder="Contraseña" id="password" required [(ngModel)]="user.password">
+                <div class="input-group-append-overlay">
+                  <label class="btn cs-password-toggle-btn input-group-text">
+                    <input type="checkbox" class="custom-control-input" id="passwordToggle">
+                    <i class="cxi-eye cs-password-toggle-indicator"></i>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="signin-password" class="form-label">Password</label>
+              <div class="cs-password-toggle input-group-overlay">
+                <input type="password" class="form-control appended-form-control" placeholder="Repita su contraseña"
+                  required name="repeatPassword" id="repeatPassword" [(ngModel)]="user.repeatPassword">
+                <div class="input-group-append-overlay">
+                  <label class="btn cs-password-toggle-btn input-group-text">
+                    <input type="checkbox" class="custom-control-input" id="passwordRepeatToggle">
+                    <i class="cxi-eye-closed cs-password-toggle-indicator"></i>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="d-flex justify-content-between align-items-center form-group">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="remember-me" checked="">
+                <label for="remember-me" class="custom-control-label">Remember me</label>
+              </div>
+              <a href="#" class="font-size-sm text-decoration-none">Forgot password?</a>
+            </div> -->
+            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+            <p class="font-size-sm pt-4 mb-0">
+              Ya tienes una cuenta?
+              <a [routerLink]="['/login']" class="font-weight-bold text-decoration-none">Iniciar
+                sesion</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<app-footer></app-footer>

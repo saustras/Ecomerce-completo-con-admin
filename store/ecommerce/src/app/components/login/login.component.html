@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<main class="cs-page-wrapper">
+  <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb breadcrumb-alt mb-0">
+        <li class="breadcrumb-item">
+          <a href="index.html"><i class="cxi-home"></i></a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Login</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="container pt-3 pt-md-4 pb-3 pb-sm-4 pb-lg-5 mb-4">
+    <div class="row d-flex align-items-center h-100">
+      <div class="col-lg-6 mx-auto">
+        <div class="px-md-5">
+          <h3 class="modal-title mt-4 mb-0 text-center">Iniciar Sesión</h3>
+          <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <div class="form-group">
+              <label for="signin-email">Correo electronico</label>
+              <input type="email" class="form-control" placeholder="Correo electronico" required="" name="email"
+                [(ngModel)]="user.email">
+            </div>
+            <div class="form-group">
+              <label for="signin-password" class="form-label">Password</label>
+              <div class="cs-password-toggle input-group-overlay">
+                <input type="password" class="form-control appended-form-control" placeholder="Contraseña" id="password"
+                  required name="password" [(ngModel)]="user.password">
+                <div class="input-group-append-overlay">
+                  <label class="btn cs-password-toggle-btn input-group-text">
+                    <input type="checkbox" class="custom-control-input" id="passwordToggle">
+                    <i class="cxi-eye cs-password-toggle-indicator"></i>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center form-group">
+              <a href="#" class="font-size-sm text-decoration-none">Olvido su contraseña?</a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+            <p class="font-size-sm pt-4 mb-0">
+              No tienes una cuenta?
+              <a [routerLink]="['/registro']" class="font-weight-bold text-decoration-none">Registrate</a>
+            </p>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<app-footer></app-footer>

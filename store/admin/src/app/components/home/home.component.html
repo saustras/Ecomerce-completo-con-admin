@@ -1,0 +1,97 @@
+<app-sidebar></app-sidebar>
+
+<!-- Page title-->
+<div class="border-bottom pt-5 mt-2 mb-5">
+  <h1 class="mt-2 mt-md-4 mb-3 pt-5">Dashboard</h1>
+</div>
+<div class="row mb-5">
+  <div class="col-12 col-lg-6 col-xl">
+    <div class="card">
+      <div class="card-body">
+        <div class="row align-items-center gx-0">
+          <div class="col">
+            <h6 class="text-uppercase text-muted mb-2">
+              Ganacia total
+            </h6>
+            <span class="h2 mb-0">
+              ${{separator(totalGanancias)}}
+            </span>
+          </div>
+          <div class="col-auto">
+            <span class="h2 fe fe-dollar-sign text-muted mb-o"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-6 col-xl">
+    <div class="card">
+      <div class="card-body">
+        <div class="row align-items-center gx-0">
+          <div class="col">
+            <h6 class="text-uppercase text-muted mb-2">
+              Ganacia mes
+            </h6>
+            <span class="h2 mb-0">
+              ${{separator(totalmes)}}
+            </span>
+          </div>
+          <div class="col-auto">
+            <span class="h2 fe fe-dollar-sign text-muted mb-o"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-6 col-xl">
+    <div class="card">
+      <div class="card-body">
+        <div class="row align-items-center gx-0">
+          <div class="col">
+            <h6 class="text-uppercase text-muted mb-2">
+              N° ventas
+            </h6>
+            <span class="h2 mb-0">
+              {{separator(countVentas)}}
+            </span>
+          </div>
+          <div class="col-auto">
+            <span class="h2 fe fe-dollar-sign text-muted mb-o"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-6 col-xl">
+    <div class="card">
+      <div class="card-body">
+        <div class="row align-items-center gx-0">
+          <div class="col">
+            <h6 class="text-uppercase text-muted mb-2">
+              Mes anterior
+            </h6>
+            <span class="h2 mb-0">
+              ${{separator(totalMesAnterior)}}
+            </span>
+          </div>
+          <div class="col-auto">
+            <span class="h2 fe fe-dollar-sign text-muted mb-o"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card box-shadow-sm">
+  <div class="card-header">
+    <h5 style="margin-bottom: 0px;">Ventas mensuales</h5>
+  </div>
+
+  <div class="card-body">
+    <div>
+      <div>
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>

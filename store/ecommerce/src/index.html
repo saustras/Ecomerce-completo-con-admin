@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ecommerce</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="mask-icon" color="#5bbad5" href="assets/img/safari-pinned-tab.svg">
+  <meta name="msapplication-TileColor" content="#766df4">
+  <meta name="theme-color" content="#ffffff">
+
+
+  <link rel="stylesheet" media="screen" href="assets/vendor/tiny-slider/dist/tiny-slider.css" />
+
+
+  <link rel="stylesheet" media="screen" href="assets/css/demo/ecommerce/theme.min.css">
+  <link rel="stylesheet" href="assets/css/demo/ecommerce/iziToast.min.css">
+  <link rel="stylesheet" href="assets/css/simplebar.min.css">
+  <link rel="stylesheet" href="assets/css/demo/ecommerce/nouislider.min.css">
+  <link rel="stylesheet" href="assets/css/tiny-slider.css">
+  <link rel="stylesheet" href="assets/vendor/lightgallery.js/dist/css/lightgallery.min.css">
+
+  <script>
+    (function () {
+      window.onload = function () {
+        var preloader = document.querySelector('.cs-page-loading');
+        preloader.classList.remove('active');
+        setTimeout(function () {
+          preloader.remove();
+        }, 2000);
+      };
+    })();
+  </script>
+
+</head>
+
+<body>
+  <div class="cs-page-loading active">
+    <div class="cs-page-loading-inner">
+      <div class="cs-page-spinner"></div><span>Loading...</span>
+    </div>
+  </div>
+
+  <main class="cs-page-wrapper">
+    <app-root></app-root>
+
+  </main>
+
+
+  <!-- Back to top button-->
+  <a class="btn-scroll-top" href="#top" data-scroll data-fixed-element>
+    <span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">Top</span>
+    <i class="btn-scroll-top-icon cxi-angle-up"></i>
+  </a>
+
+
+
+  <script src="assets/vendor/jquery/dist/jquery.slim.min.js"></script>
+  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="assets/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+  <script src="assets/js/simplebar.min.js"></script>
+  <script src="assets/js/nouislider.min.js"></script>
+  <script src="assets/js/smooth-scroll.polyfills.min.js"></script>
+  <script src="assets/js/tiny-slider.js"></script>
+  <script src="assets/vendor/lightgallery.js/dist/js/lightgallery.min.js"></script>
+
+
+
+  <script src="assets/js/theme.min.js"></script>
+  <script src="assets/js/iziToast.min.js"></script>
+  <script src="assets/js/cleave.min.js"></script>
+  <script src="assets/js/sticky-sidebar.min.js"></script>
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=AabtkUU6eIELHlhqk4lrpmxy5fk3bcWEXHjexrJPRFVJCBF1sASUNW0xzl8pUAsb7NF6QhCrqfiM3aDJ"></script>
+</body>
+
+</html>
